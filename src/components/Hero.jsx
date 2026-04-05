@@ -45,6 +45,15 @@ export default function Hero() {
     >
       <div className="absolute -left-4 top-24 hidden h-24 w-px bg-gradient-to-b from-brand/50 to-transparent md:block" aria-hidden />
 
+      {/* Availability badge */}
+      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        </span>
+        {site.availability}
+      </div>
+
       <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
         {/* Text column */}
         <div className="flex-1">
@@ -88,7 +97,7 @@ export default function Hero() {
             <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-brand/50 via-brand/20 to-transparent blur-md opacity-60 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
             <div className="relative h-full w-full rounded-full border-2 border-brand/30 bg-brand/5 overflow-hidden shadow-lg transition-all duration-500 group-hover:border-brand/60 group-hover:shadow-[0_0_25px_-5px_rgba(var(--brand),0.4)]">
               <img
-                src="/profile.jsx.jpeg"
+                src="/profile.jpeg"
                 alt="Ashiq Rahman"
                 className="h-full w-full object-cover"
                 style={{ objectPosition: 'top' }}

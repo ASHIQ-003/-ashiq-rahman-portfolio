@@ -1,14 +1,14 @@
 import Section from "./Section";
-import { education, experience } from "../content";
+import { education, experience, learning } from "../content";
 
 export default function Experience() {
   return (
-    <Section className="border-t border-border/80 py-14 sm:py-18">
+    <Section id="experience" className="border-t border-border/80 py-14 sm:py-18">
       <div className="grid gap-16 lg:grid-cols-2">
         {/* Education Column */}
         <div>
           <h2 className="section-label flex items-center gap-2 text-brand">
-            <span className="text-sm">🎓</span> Education
+            Education
           </h2>
           <ol className="relative mt-8 space-y-6 border-l border-border pl-8 sm:pl-10">
             <span
@@ -38,7 +38,7 @@ export default function Experience() {
         {/* Experience Column */}
         <div>
           <h2 className="section-label flex items-center gap-2 text-brand">
-            <span className="text-sm">💼</span> Experience
+            Experience
           </h2>
           <ol className="relative mt-8 space-y-6 border-l border-border pl-8 sm:pl-10">
             <span
@@ -62,6 +62,22 @@ export default function Experience() {
             ))}
           </ol>
         </div>
+      </div>
+
+      {/* Currently Learning */}
+      <div className="mt-16 rounded-2xl border border-border bg-surface-muted/40 p-6 sm:p-8">
+        <p className="section-label">Currently learning</p>
+        <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {learning.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-3 rounded-xl border border-border/60 bg-surface px-4 py-3 text-sm font-medium text-ink shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card"
+            >
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );

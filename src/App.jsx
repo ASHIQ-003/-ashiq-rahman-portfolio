@@ -11,6 +11,7 @@ import Experience from "./components/Experience.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import CommandPalette from "./components/CommandPalette.jsx";
+import Testimonials from "./components/Testimonials.jsx";
 import { navSpyIds } from "./content.js";
 import { useActiveSection } from "./hooks/useActiveSection.js";
 
@@ -74,6 +75,7 @@ export default function App() {
           <FoundersNote />
           <StartupSection />
           <Projects />
+          <Testimonials />
           <Experience />
           <Contact />
         </main>

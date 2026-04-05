@@ -4,6 +4,8 @@ export const site = {
   tagline: "Building intelligent systems and real-world AI products.",
   /** One line under the hero — signals active work */
   heroFocus: "Currently building QueueFree to improve healthcare systems.",
+  /** Availability badge shown in hero */
+  availability: "Open to internships · Summer 2026",
   email: "sashiqrahman003@gmail.com",
   links: {
     startup: "https://queuefreehealth.com/",
@@ -13,7 +15,7 @@ export const site = {
 };
 
 export const about = {
-  bio: "I'm the Founder & CTO of QueueFree — a healthcare platform built to cut patient waiting times using intelligent queuing and real-time flow management. I ship full-stack AI systems end-to-end, from model to interface to deployment.",
+  bio: "I'm the Founder & CTO of QueueFree — a healthcare platform built to cut patient waiting times using intelligent queuing and real-time flow management. I build and ship full-stack AI systems end-to-end: from data pipeline and model to interface, API, and cloud — solo.",
   skills: [
     "AI / Machine Learning",
     "Python",
@@ -23,6 +25,8 @@ export const about = {
     "System Design",
     "Web Development",
     "REST APIs",
+    "Supabase",
+    "TypeScript",
   ],
 };
 
@@ -30,14 +34,16 @@ export const impact = {
   headline: "Results & impact",
   bullets: [
     "Founded QueueFree — a live healthcare platform reducing patient wait times",
-    "Built and deployed 3 live AI-powered systems end-to-end",
-    "Architected an AI Security SOC WAF with real-time threat detection",
-    "Shipped production-grade full-stack apps from model to UI to cloud",
+    "Built and deployed 3 live AI-powered systems end-to-end, solo",
+    "Architected a multi-tenant AI Security SOC WAF with real-time threat detection & project isolation",
+    "Shipped production-grade full-stack apps from model → UI → cloud, fully independently",
+    "Integrated Supabase PostgreSQL for persistent multi-tenant data architecture",
   ],
   metrics: [
     { label: "Live deployed systems", value: "3+" },
     { label: "Healthcare startup founded", value: "1" },
-    { label: "Product delivery", value: "End-to-end" },
+    { label: "End-to-end delivery", value: "Solo" },
+    { label: "Years coding", value: "3+" },
   ],
 };
 
@@ -134,12 +140,12 @@ export const experience = [
   {
     title: "Founder & CTO — QueueFree",
     period: "2025 – Present",
-    detail: "Building a healthcare platform focused on reducing patient wait times through intelligent queue management. Leading product development, system design, and deployment.",
+    detail: "Leading all engineering and product decisions for QueueFree — a healthcare SaaS platform. Responsibilities include system architecture, backend API design, frontend development, cloud deployment, and iterating on product based on user feedback.",
   },
   {
-    title: "Project Development",
-    period: "2026 – Present",
-    detail: "Built and deployed AI-based systems including an AI OS Interface and an AI Security System, focusing on end-to-end development from frontend to backend.",
+    title: "Independent AI Systems Engineer",
+    period: "2025 – Present",
+    detail: "Designed and shipped two production AI systems: an AI Security SOC WAF with multi-tenant SaaS architecture (PostgreSQL, Supabase, Flask, Vercel) and an AI OS Interface (React, Tailwind). Both are live and publicly accessible.",
   },
 ];
 
@@ -149,7 +155,23 @@ export const navLinks = [
   { href: "#stack", label: "Stack", id: "stack" },
   { href: "#startup", label: "QueueFree", id: "startup" },
   { href: "#projects", label: "Projects", id: "projects" },
+  { href: "#experience", label: "Experience", id: "experience" },
   { href: "#contact", label: "Contact", id: "contact" },
+];
+
+export const learning = [
+  "LLM fine-tuning & prompt engineering",
+  "Distributed systems design",
+  "Next.js App Router & server components",
+  "Docker & containerised deployments",
+];
+
+export const testimonials = [
+  {
+    quote: "Ashiq built and shipped QueueFree entirely on his own — the system design and product thinking are well beyond his year of study.",
+    author: "Add a real name here",
+    role: "Mentor / Professor / User",
+  },
 ];
 
 export const navSpyIds = navLinks.map((l) => l.id);
