@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: 252 252 251;
+    --surface-muted: 245 245 244;
+    --ink: 28 25 23;
+    --ink-muted: 100 95 90;
+    --accent: 41 37 36;
+    --accent-hover: 68 64 60;
+    --border: 228 226 223;
+    --brand: 13 116 110;
+    --brand-hover: 15 133 126;
+    --brand-fg: 255 255 255;
+    --brand-muted: 204 243 239;
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    --surface: 15 14 14;
+    --surface-muted: 28 27 26;
+    --ink: 250 249 248;
+    --ink-muted: 163 156 150;
+    --accent: 214 211 209;
+    --accent-hover: 231 229 228;
+    --border: 48 47 46;
+    --brand: 56 178 172;
+    --brand-hover: 94 211 204;
+    --brand-fg: 15 14 14;
+    --brand-muted: 19 78 74;
+  }
+
+  body {
+    @apply bg-surface font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand/15 text-ink;
+  }
+
+  .dark ::selection {
+    @apply bg-brand/25;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-surface;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-muted;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-brand-fg shadow-sm transition-all duration-250 hover:bg-brand-hover hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-surface/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-sm backdrop-blur-sm transition-all duration-250 hover:border-ink-muted/25 hover:bg-surface-muted active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-ink transition-colors duration-250 hover:bg-surface-muted;
+  }
+
+  .btn-cv {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-brand/40 bg-brand/10 px-4 py-2.5 text-sm font-semibold text-brand shadow-[0_0_15px_-3px_rgba(13,116,110,0.3)] backdrop-blur-md transition-all duration-300 hover:border-brand/80 hover:bg-brand/20 hover:text-brand hover:shadow-[0_0_20px_-3px_rgba(13,116,110,0.5)] active:scale-[0.98];
+  }
+
+
+  .page-grid {
+    background-image:
+      linear-gradient(rgb(var(--border) / 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--border) / 0.45) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
+  }
+
+  .page-radial {
+    background: radial-gradient(
+      1200px circle at 50% -15%,
+      rgb(var(--brand) / 0.07),
+      transparent 55%
+    );
+  }
+
+  .dark .page-radial {
+    background: radial-gradient(
+      900px circle at 50% -10%,
+      rgb(var(--brand) / 0.12),
+      transparent 50%
+    );
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-delay-fix {
+    opacity: 0;
+  }
+
+  /* Typewriter cursor blink */
+  .typewriter-cursor {
+    display: inline-block;
+    margin-left: 1px;
+    font-weight: 300;
+    animation: blink 1s step-end infinite;
+    color: rgb(var(--brand));
+  }
+
+  /* Scroll progress bar */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(var(--brand)), rgb(var(--brand-hover)));
+    z-index: 9999;
+    transition: width 0.1s linear;
+    transform-origin: left;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
