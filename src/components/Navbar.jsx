@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { navLinks, site } from "../content";
+import { IconArrowUpRight } from "./icons.jsx";
 
 export default function Navbar({ dark, onToggleDark, activeSection }) {
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +40,12 @@ export default function Navbar({ dark, onToggleDark, activeSection }) {
             {site.name.split(" ")[0]}
             <span className="font-medium text-ink-muted">{" Rahman"}</span>
           </span>
+          <span className="hidden items-center gap-2 sm:flex">
+            <span className="text-border/60 text-xs">·</span>
+            <span className="rounded-md bg-teal-500/10 px-2 py-0.5 text-xs font-bold tracking-wide text-teal-600 dark:text-teal-400">
+              QueueFree
+            </span>
+          </span>
         </a>
         <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary">
           {navLinks.map((l) => {
@@ -59,12 +66,15 @@ export default function Navbar({ dark, onToggleDark, activeSection }) {
           })}
         </nav>
         <div className="flex items-center gap-2">
+          {/* QueueFree CTA — replaces Download CV */}
           <a
-            href="/resume.pdf"
-            download
-            className="btn-cv hidden px-4 py-2 text-xs sm:inline-flex sm:text-sm"
+            href={site.links.startup}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-cv hidden items-center gap-1.5 px-4 py-2 text-xs sm:inline-flex sm:text-sm"
           >
-            Download CV
+            QueueFree
+            <IconArrowUpRight className="h-3.5 w-3.5 opacity-80" />
           </a>
           <kbd
             className="hidden cursor-pointer select-none items-center gap-1 rounded-lg border border-border bg-surface-muted px-2 py-1.5 text-[11px] font-semibold text-ink-muted transition-colors hover:border-brand/40 hover:text-brand md:flex"
@@ -87,13 +97,11 @@ export default function Navbar({ dark, onToggleDark, activeSection }) {
             title={dark ? "Switch to light theme" : "Switch to dark theme"}
           >
             {dark ? (
-              /* Sun icon */
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <circle cx="12" cy="12" r="5" />
                 <path strokeLinecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
               </svg>
             ) : (
-              /* Moon icon */
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
               </svg>
@@ -138,12 +146,14 @@ export default function Navbar({ dark, onToggleDark, activeSection }) {
               );
             })}
             <a
-              href="/resume.pdf"
-              download
+              href={site.links.startup}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="mt-1 rounded-lg px-3 py-2.5 text-sm font-semibold text-brand hover:bg-surface-muted"
+              className="mt-1 flex items-center gap-1.5 rounded-lg px-3 py-2.5 text-sm font-semibold text-brand hover:bg-surface-muted"
             >
-              Download CV
+              QueueFree
+              <IconArrowUpRight className="h-3.5 w-3.5 opacity-80" />
             </a>
           </div>
         </div>

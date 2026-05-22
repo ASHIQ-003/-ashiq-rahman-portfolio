@@ -22,7 +22,7 @@ export default function Impact() {
           </ul>
         </div>
         <div className="w-full max-w-md">
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-muted">Impact at a glance</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-muted">At a glance</p>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:gap-4">
             {impact.metrics.map((m) => (
               <div
@@ -36,24 +36,26 @@ export default function Impact() {
           </div>
         </div>
       </div>
+
+      {/* Founder in build mode callout */}
       <div className="group mt-12 flex items-center gap-5 rounded-2xl border border-border bg-gradient-to-br from-surface-muted/80 to-surface-muted/30 p-5 shadow-sm transition-all duration-500 hover:border-brand/30 hover:shadow-lg sm:p-6 lg:max-w-xl">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-brand/20">
-          <span className="text-xl">🚀</span>
+          <span className="text-xl">⚡</span>
         </div>
         <div>
-          <p className="text-sm font-semibold text-ink">Active developer</p>
+          <p className="text-sm font-semibold text-ink">Founder in build mode</p>
           <p className="mt-1 text-sm leading-relaxed text-ink-muted">
-            Shipped work and experiments on{" "}
-          <a
-            href={site.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-brand underline decoration-brand/30 underline-offset-4 transition-colors hover:decoration-brand"
-          >
-            GitHub
-          </a>
-          — products first, noise never.
-        </p>
+            Every system shipped on{" "}
+            <a
+              href={site.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-brand underline decoration-brand/30 underline-offset-4 transition-colors hover:decoration-brand"
+            >
+              GitHub
+            </a>
+            {" "}is live and functional. Products first — noise never.
+          </p>
         </div>
       </div>
     </Section>

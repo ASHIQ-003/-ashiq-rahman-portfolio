@@ -9,9 +9,9 @@ export default function FoundersNote() {
         <div className="px-6 py-9 pl-8 sm:px-10 sm:py-10">
           <p className="section-label">{foundersNote.title}</p>
           <p className="mt-6 font-display text-lg italic leading-relaxed text-ink sm:text-xl">
-            “{foundersNote.body}”
+            "{foundersNote.body}"
           </p>
-          <footer className="mt-6 text-sm font-semibold text-ink-muted">— Ashiq Rahman</footer>
+          <footer className="mt-6 text-sm font-semibold text-ink-muted">— Ashiq Rahman, Founder & CTO @ QueueFree</footer>
         </div>
       </blockquote>
     </Section>

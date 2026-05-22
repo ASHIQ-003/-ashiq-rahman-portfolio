@@ -6,7 +6,7 @@ export default function TechStack() {
     <Section id="stack" className="border-t border-border/80">
       <h2 className="section-label">{techStack.title}</h2>
       <p className="mt-4 max-w-lg text-sm leading-relaxed text-ink-muted">
-        Tools I reach for when shipping end-to-end—from interface to APIs.
+        {techStack.subtitle}
       </p>
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         {techStack.groups.map((g) => (

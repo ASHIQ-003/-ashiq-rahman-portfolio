@@ -5,10 +5,17 @@ import { site } from "../content";
 const linkClass =
   "font-semibold text-brand underline decoration-brand/30 underline-offset-4 transition-colors hover:decoration-brand";
 
-// Sign up at https://formspree.io → create a form → paste your form ID below
-// Replace "YOUR_FORM_ID" with your actual Formspree form ID (e.g. "xpwzgkqb")
 const FORMSPREE_ID = "mgoppbgv";
 const USE_FORMSPREE = FORMSPREE_ID !== "YOUR_FORM_ID";
+
+const INTENT_OPTIONS = [
+  "Partnership or collaboration",
+  "Feedback on QueueFree",
+  "Investor inquiry",
+  "Press or media",
+  "Technical question",
+  "Other",
+];
 
 export default function Contact() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
@@ -35,12 +42,11 @@ export default function Contact() {
         setStatus("error");
       }
     } else {
-      // Fallback: mailto link
       const name = form.name.value.trim();
       const subject = form.subject.value.trim();
       const body = form.message.value.trim();
       const line = `From: ${name}\n\n${body}`;
-      const mail = `mailto:${site.email}?subject=${encodeURIComponent(subject || "Portfolio inquiry")}&body=${encodeURIComponent(line)}`;
+      const mail = `mailto:${site.email}?subject=${encodeURIComponent(subject || "Reaching out")}&body=${encodeURIComponent(line)}`;
       window.location.href = mail;
       setStatus("sent");
       setTimeout(() => setStatus("idle"), 4000);
@@ -49,21 +55,17 @@ export default function Contact() {
 
   return (
     <Section id="contact" className="border-t border-border/80">
-      <h2 className="section-label">Contact</h2>
+      <h2 className="section-label">Let's connect</h2>
       <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink-muted">
-        Tell me what you&rsquo;re building. Fastest on email at{" "}
+        If you're building in healthcare, working on something interesting, or want to discuss what QueueFree is solving — reach out. Fastest on email at{" "}
         <a href={`mailto:${site.email}`} className={linkClass}>
           {site.email}
         </a>
         . Also on{" "}
-        <a href={site.links.github} target="_blank" rel="noreferrer" className={linkClass}>
-          GitHub
-        </a>
-        ,{" "}
         <a href={site.links.linkedin} target="_blank" rel="noreferrer" className={linkClass}>
           LinkedIn
         </a>
-        , and{" "}
+        {" "}and{" "}
         <a href={site.links.startup} target="_blank" rel="noreferrer" className={linkClass}>
           QueueFree
         </a>
@@ -103,14 +105,19 @@ export default function Contact() {
         </div>
         <div>
           <label htmlFor="contact-subject" className="text-xs font-bold uppercase tracking-wider text-ink-muted">
-            Subject
+            Reason for reaching out
           </label>
-          <input
+          <select
             id="contact-subject"
             name="subject"
             disabled={status === "sending"}
             className="mt-2 w-full rounded-xl border border-border bg-surface px-4 py-2.5 text-sm text-ink outline-none ring-brand/20 transition-shadow focus:ring-2 disabled:opacity-60"
-          />
+          >
+            <option value="">Select one…</option>
+            {INTENT_OPTIONS.map((opt) => (
+              <option key={opt} value={opt}>{opt}</option>
+            ))}
+          </select>
         </div>
         <div>
           <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider text-ink-muted">
@@ -137,7 +144,7 @@ export default function Contact() {
 
           {status === "error" && (
             <p className="text-xs text-red-500" role="alert">
-              Something went wrong. Email me directly at{" "}
+              Something went wrong. Email me at{" "}
               <a href={`mailto:${site.email}`} className="underline">{site.email}</a>.
             </p>
           )}

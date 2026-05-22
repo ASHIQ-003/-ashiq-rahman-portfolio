@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" fill="none">
+  <!-- Background -->
+  <rect width="400" height="260" rx="16" fill="#0F2D3D"/>
+
+  <!-- === Stethoscope icon === -->
+  <!-- Left earpiece tube -->
+  <path d="M163 72 C163 72 158 67 158 60 C158 51 165 44 174 44 C183 44 190 51 190 60"
+    stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Right earpiece tube -->
+  <path d="M237 72 C237 72 242 67 242 60 C242 51 235 44 226 44 C217 44 210 51 210 60"
+    stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Left earpiece dot -->
+  <circle cx="174" cy="44" r="5" fill="white"/>
+  <!-- Right earpiece dot -->
+  <circle cx="226" cy="44" r="5" fill="white"/>
+  <!-- Main tube arc -->
+  <path d="M163 72 Q163 100 172 113 Q182 127 200 136 Q218 127 228 113 Q237 100 237 72"
+    stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Lower arc closing -->
+  <path d="M172 113 Q200 148 228 113"
+    stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Teal checkmark -->
+  <path d="M185 112 L196 125 L220 96"
+    stroke="#2DD4BF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- === Wordmark === -->
+  <text x="200" y="178" text-anchor="middle"
+    font-family="'Segoe UI', 'Inter', Arial, sans-serif"
+    font-size="38" font-weight="700" fill="white" letter-spacing="-0.5">QueueFree</text>
+
+  <!-- === Tagline === -->
+  <text x="200" y="205" text-anchor="middle"
+    font-family="'Segoe UI', 'Inter', Arial, sans-serif"
+    font-size="16" font-weight="400" fill="#2DD4BF" letter-spacing="0.5">Less waiting. More caring.</text>
+</svg>

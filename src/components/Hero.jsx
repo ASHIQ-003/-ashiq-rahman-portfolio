@@ -3,9 +3,9 @@ import { site } from "../content";
 
 const ROLES = [
   "Founder & CTO @ QueueFree",
-  "AI Systems Developer",
-  "Full-Stack Engineer",
   "Healthcare Tech Builder",
+  "Full-Stack Systems Engineer",
+  "AI-Powered Product Builder",
 ];
 
 function Typewriter() {
@@ -41,24 +41,23 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-20"
+      className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pb-24 sm:pt-24"
     >
-      <div className="absolute -left-4 top-24 hidden h-24 w-px bg-gradient-to-b from-brand/50 to-transparent md:block" aria-hidden />
 
-      {/* Availability badge */}
+      {/* Founder status badge */}
       <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
         </span>
-        {site.availability}
+        Founder · Actively Building QueueFree
       </div>
 
       <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
         {/* Text column */}
         <div className="flex-1">
           <p className="animate-fade-in animate-delay-fix text-[11px] font-semibold uppercase tracking-[0.22em] text-brand">
-            Founder · Builder · AI Developer
+            Founder · Builder · Systems Engineer
           </p>
           <h1 className="animate-fade-in-delay-1 animate-delay-fix mt-4 font-display text-hero font-semibold text-ink">
             {site.name}
@@ -73,11 +72,11 @@ export default function Hero() {
             {site.heroFocus}
           </p>
           <div className="animate-fade-in-delay-5 animate-delay-fix mt-10 flex flex-wrap gap-2.5">
-            <a href="#projects" className="btn-primary min-w-[8.5rem] shadow-glow">
-              View Projects
+            <a href="#startup" className="btn-primary min-w-[8.5rem] shadow-glow">
+              See QueueFree
             </a>
-            <a href="#startup" className="btn-secondary min-w-[8.5rem]">
-              Explore Startup
+            <a href="#projects" className="btn-secondary min-w-[8.5rem]">
+              View Projects
             </a>
             <a href={site.links.github} target="_blank" rel="noreferrer" className="btn-ghost">
               GitHub
@@ -85,24 +84,20 @@ export default function Hero() {
             <a href={site.links.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
               LinkedIn
             </a>
-            <a href="/resume.pdf" download className="btn-cv sm:hidden">
-              Download CV
-            </a>
           </div>
         </div>
 
-        {/* Profile photo */}
-        <div className="animate-fade-in animate-delay-fix shrink-0 self-center sm:self-start sm:pt-2 group cursor-pointer">
-          <div className="relative h-36 w-36 sm:h-48 sm:w-48 transition-transform duration-500 ease-out group-hover:scale-105">
-            <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-brand/50 via-brand/20 to-transparent blur-md opacity-60 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
-            <div className="relative h-full w-full rounded-full border-2 border-brand/30 bg-brand/5 overflow-hidden shadow-lg transition-all duration-500 group-hover:border-brand/60 group-hover:shadow-[0_0_25px_-5px_rgba(var(--brand),0.4)]">
-              <img
-                src="/profile.jpeg"
-                alt="Ashiq Rahman"
-                className="h-full w-full object-cover"
-                style={{ objectPosition: 'top' }}
-              />
-            </div>
+        {/* Profile photo — minimal, sharp, no heavy glows */}
+        <div className="animate-fade-in animate-delay-fix shrink-0 self-center sm:self-start sm:pt-2 group">
+          <div className="relative h-40 w-40 sm:h-52 sm:w-52 overflow-hidden rounded-[2rem] bg-surface-muted transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+            <img
+              src="/profile.jpeg"
+              alt="Ashiq Rahman"
+              className="h-full w-full object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0"
+              style={{ objectPosition: 'top' }}
+            />
+            {/* Very subtle inner ring for depth */}
+            <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-ink/5" aria-hidden />
           </div>
         </div>
       </div>

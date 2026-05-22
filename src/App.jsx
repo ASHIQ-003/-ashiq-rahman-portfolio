@@ -4,7 +4,6 @@ import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Impact from "./components/Impact.jsx";
 import TechStack from "./components/TechStack.jsx";
-import FoundersNote from "./components/FoundersNote.jsx";
 import StartupSection from "./components/StartupSection.jsx";
 import Projects from "./components/Projects.jsx";
 import Experience from "./components/Experience.jsx";
@@ -72,7 +71,6 @@ export default function App() {
           <About />
           <Impact />
           <TechStack />
-          <FoundersNote />
           <StartupSection />
           <Projects />
           <Testimonials />

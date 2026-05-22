@@ -1,83 +1,57 @@
 import Section from "./Section";
-import { education, experience, learning } from "../content";
+import { education, experience, buildingTowards } from "../content";
 
 export default function Experience() {
   return (
-    <Section id="experience" className="border-t border-border/80 py-14 sm:py-18">
+    <Section id="experience" className="border-t border-border/60 py-16 sm:py-24">
       <div className="grid gap-16 lg:grid-cols-2">
-        {/* Education Column */}
+        {/* Timeline Column */}
         <div>
-          <h2 className="section-label flex items-center gap-2 text-brand">
-            Education
-          </h2>
-          <ol className="relative mt-8 space-y-6 border-l border-border pl-8 sm:pl-10">
-            <span
-              className="absolute -left-px top-0 h-24 w-px bg-gradient-to-b from-brand to-transparent"
-              aria-hidden
-            />
-            {education.map((item) => (
-              <li key={item.title} className="relative transition-all duration-300 hover:translate-x-1">
-                <span className="absolute -left-[21px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full border-2 border-brand bg-surface shadow-sm sm:-left-[25px]" />
+          <h2 className="section-label">Timeline</h2>
+          <ol className="relative mt-10 space-y-10 border-l border-border/50 pl-8">
+            {experience.map((item, i) => (
+              <li key={item.title} className="relative group">
+                <span className="absolute -left-[37px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full bg-border transition-colors group-hover:bg-ink" />
                 <div className="flex flex-wrap items-baseline gap-3">
                   {item.period && (
-                    <span className="text-[11px] font-medium text-ink-muted">{item.period}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">{item.period}</span>
                   )}
                 </div>
-                <h3 className="mt-1.5 font-semibold text-ink leading-snug">{item.title}</h3>
-                <p className="mt-1.5 max-w-lg text-sm leading-relaxed text-ink-muted">{item.detail}</p>
-                {item.focus && (
-                  <p className="mt-3 text-xs font-medium text-ink-muted/90 border-l-2 border-brand/40 pl-3">
-                    {item.focus}
-                  </p>
-                )}
+                <h3 className="mt-2 font-display text-xl font-medium tracking-tight text-ink">{item.title}</h3>
+                <p className="mt-3 max-w-lg text-base leading-relaxed text-ink/80">{item.detail}</p>
               </li>
             ))}
           </ol>
         </div>
 
-        {/* Experience Column */}
+        {/* Roadmap Column */}
         <div>
-          <h2 className="section-label flex items-center gap-2 text-brand">
-            Experience
-          </h2>
-          <ol className="relative mt-8 space-y-6 border-l border-border pl-8 sm:pl-10">
-            <span
-              className="absolute -left-px top-0 h-24 w-px bg-gradient-to-b from-brand to-transparent"
-              aria-hidden
-            />
-            {experience.map((item, i) => (
-              <li key={item.title} className="relative transition-all duration-300 hover:translate-x-1">
-                <span className="absolute -left-[21px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full border-2 border-brand bg-surface shadow-sm sm:-left-[25px]" />
-                <div className="flex flex-wrap items-baseline gap-3">
-                  <span className="mb-1 inline-block text-[11px] font-bold uppercase tracking-widest text-brand">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  {item.period && (
-                    <span className="text-[11px] font-medium text-ink-muted">{item.period}</span>
-                  )}
-                </div>
-                <h3 className="font-semibold text-ink">{item.title}</h3>
-                <p className="mt-2 max-w-lg text-sm leading-relaxed text-ink-muted">{item.detail}</p>
+          <h2 className="section-label">Roadmap</h2>
+          <ul className="mt-10 space-y-6">
+            {buildingTowards.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-4 border-b border-border/40 pb-6"
+              >
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink/20" aria-hidden />
+                <span className="text-base leading-relaxed text-ink/90">{item}</span>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </div>
 
-      {/* Currently Learning */}
-      <div className="mt-16 rounded-2xl border border-border bg-surface-muted/40 p-6 sm:p-8">
-        <p className="section-label">Currently learning</p>
-        <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {learning.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-3 rounded-xl border border-border/60 bg-surface px-4 py-3 text-sm font-medium text-ink shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card"
-            >
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
-              {item}
-            </li>
-          ))}
-        </ul>
+      {/* Education — minimised to a stark footnote */}
+      <div className="mt-20 border-t border-border/40 pt-6">
+        {education.map((item) => (
+          <div key={item.title} className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-muted">
+            <span className="font-semibold text-ink">{item.title}</span>
+            <span className="opacity-50">/</span>
+            <span>{item.detail}</span>
+            <span className="opacity-50">/</span>
+            <span>{item.period}</span>
+          </div>
+        ))}
       </div>
     </Section>
   );

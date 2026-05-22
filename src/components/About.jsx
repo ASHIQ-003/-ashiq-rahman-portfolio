@@ -5,12 +5,12 @@ export default function About() {
   return (
     <Section id="about">
       <div className="max-w-2xl">
-        <h2 className="section-label">About</h2>
+        <h2 className="section-label">Behind QueueFree</h2>
         <p className="mt-6 text-lg leading-relaxed text-ink sm:text-xl">
           {about.bio}
         </p>
         <div className="mt-10">
-          <h3 className="text-sm font-semibold text-ink">Core skills</h3>
+          <h3 className="text-sm font-semibold text-ink">{about.toolsLabel}</h3>
           <ul className="mt-4 flex flex-wrap gap-2">
             {about.skills.map((s) => (
               <li

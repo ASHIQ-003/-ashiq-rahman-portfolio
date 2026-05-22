@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Stethoscope arc / headset -->
+  <path
+    d="M72 58 C72 58 68 54 68 48 C68 40 74 34 82 34 C90 34 96 40 96 48"
+    stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"
+  />
+  <path
+    d="M128 58 C128 58 132 54 132 48 C132 40 126 34 118 34 C110 34 104 40 104 48"
+    stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"
+  />
+  <!-- Earpiece dots -->
+  <circle cx="82" cy="34" r="4" fill="white" />
+  <circle cx="118" cy="34" r="4" fill="white" />
+  <!-- Stethoscope tube going down and forming rounded square -->
+  <path
+    d="M72 58 Q72 80 80 92 Q88 105 100 112 Q112 105 120 92 Q128 80 128 58"
+    stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"
+  />
+  <!-- Rounded shield outline (tube terminus) -->
+  <path
+    d="M80 92 Q100 130 120 92"
+    stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"
+  />
+  <!-- Checkmark inside -->
+  <path
+    d="M87 90 L96 101 L115 80"
+    stroke="#2DD4BF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"
+  />
+</svg>

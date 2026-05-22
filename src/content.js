@@ -1,11 +1,8 @@
 export const site = {
   name: "Ashiq Rahman",
-  title: "Founder & CTO @ QueueFree | AI Systems Developer",
-  tagline: "Building intelligent systems and real-world AI products.",
-  /** One line under the hero — signals active work */
-  heroFocus: "Currently building QueueFree to improve healthcare systems.",
-  /** Availability badge shown in hero */
-  availability: "Open to internships · Summer 2026",
+  title: "Founder & CTO @ QueueFree",
+  tagline: "Building systems that solve real problems — from idea to production.",
+  heroFocus: "QueueFree exists because hospitals lose hours every day to broken queue management. We're fixing that.",
   email: "sashiqrahman003@gmail.com",
   links: {
     startup: "https://queuefreehealth.com/",
@@ -15,64 +12,76 @@ export const site = {
 };
 
 export const about = {
-  bio: "I'm the Founder & CTO of QueueFree — a healthcare platform built to cut patient waiting times using intelligent queuing and real-time flow management. I build and ship full-stack AI systems end-to-end: from data pipeline and model to interface, API, and cloud — solo.",
+  bio: "QueueFree exists to solve a real operational problem in healthcare — patients wait too long because the systems managing them are broken. As Founder & CTO, I lead all engineering and product decisions: system architecture, backend APIs, frontend, and cloud infrastructure. We build end-to-end and ship fast — because the problem is real and the window to fix it is now.",
+  toolsLabel: "What we build with",
   skills: [
-    "AI / Machine Learning",
     "Python",
     "React",
     "Flask / FastAPI",
     "PostgreSQL",
-    "System Design",
-    "Web Development",
-    "REST APIs",
     "Supabase",
     "TypeScript",
+    "REST APIs",
+    "Vercel",
+    "System Design",
+    "AI Pipelines",
   ],
 };
 
 export const impact = {
-  headline: "Results & impact",
+  headline: "Shipped & operating",
   bullets: [
-    "Founded QueueFree — a live healthcare platform reducing patient wait times",
-    "Built and deployed 3 live AI-powered systems end-to-end, solo",
-    "Architected a multi-tenant AI Security SOC WAF with real-time threat detection & project isolation",
-    "Shipped production-grade full-stack apps from model → UI → cloud, fully independently",
-    "Integrated Supabase PostgreSQL for persistent multi-tenant data architecture",
+    "Founded QueueFree — a live healthcare SaaS platform managing patient flow in real time",
+    "Designed and deployed a multi-tenant AI Security SOC WAF with real-time threat detection",
+    "Shipped an AI OS Interface — a production-grade system UI, live and publicly accessible",
+    "Full ownership across every layer: architecture, API, UI, database, and cloud deployment",
+    "Every system live, functional, and publicly accessible — built to production standard",
   ],
   metrics: [
     { label: "Live deployed systems", value: "3+" },
     { label: "Healthcare startup founded", value: "1" },
-    { label: "End-to-end delivery", value: "Solo" },
-    { label: "Years coding", value: "3+" },
+    { label: "Founding team", value: "Small" },
+    { label: "Years building", value: "3+" },
   ],
 };
 
 export const foundersNote = {
-  title: "Founder's note",
-  body: "I focus on building systems that move from ideas to real-world use — where interfaces, data, and execution come together.",
+  title: "Why we build",
+  body: "We build because problems in the real world don't fix themselves. QueueFree started with a simple observation — hospitals waste hours daily on something software can solve. That's enough reason to build. Execution matters more than permission.",
 };
 
 export const techStack = {
-  title: "Tech stack",
+  title: "The stack",
+  subtitle: "Tools we reach for when shipping end-to-end — from interface to infrastructure.",
   groups: [
     { name: "Languages", items: ["Python", "JavaScript", "TypeScript"] },
     { name: "Frontend", items: ["React", "Vite", "Tailwind CSS", "HTML / CSS"] },
     { name: "Backend", items: ["Flask", "FastAPI", "REST APIs", "PostgreSQL", "SQLite"] },
-    { name: "AI / ML", items: ["Machine Learning", "AI Pipelines", "Threat Detection"] },
-    { name: "Cloud & Tools", items: ["Vercel", "Supabase", "Git", "GitHub"] },
+    { name: "AI / Automation", items: ["ML Pipelines", "Threat Detection", "AI-assisted workflows"] },
+    { name: "Cloud & Infrastructure", items: ["Vercel", "Supabase", "Git", "GitHub"] },
   ],
 };
 
 export const startup = {
   title: "QueueFree",
   role: "Founder & CTO",
-  description:
-    "QueueFree is a healthcare-focused platform designed to reduce waiting times and improve patient flow through smart technology.",
+
+  thesisTitle: "The thesis behind QueueFree",
+  thesisBody: [
+    "I've spent a lot of time watching how hospitals operate. The medical care is often world-class, but the operational infrastructure is broken. Patients wait for hours with zero visibility into when they will be seen. Doctors are overwhelmed by chaotic queues they can't control.",
+    "QueueFree is my answer to that. It's a real-time platform that gives every clinic full visibility into their patient flow, and every patient a predictable wait time. It replaces clipboards and shouting with a silent, synchronized system.",
+    "I built the entire stack from the ground up: the real-time database schema, the doctor-side interface, the admin analytics, and the cloud deployment. The goal isn't just to sell software—it's to eliminate preventable waiting in healthcare."
+  ],
+
+  stats: [
+    { label: "Target Market", value: "India, then Global" },
+    { label: "Status", value: "Deployed" },
+    { label: "Founded", value: "2025" }
+  ],
+
   url: "https://queuefreehealth.com/",
-  /** Replace this file in /public with your latest production capture anytime */
-  imageSrc: "/queuefree-screenshot.png",
-  figureCaption:
-    "QueueFree — product dashboard. Update this image when you ship new UI.",
+  imageSrc: "/queuefree-banner.png",
+  figureCaption: "QueueFree — Live platform architecture.",
 };
 
 export const projects = [
@@ -81,9 +90,9 @@ export const projects = [
     title: "AI OS Interface",
     status: "live",
     problem:
-      "Most tools don’t pair a structured system surface with intuitive, interactive AI workflows — friction gets in the way of real use.",
+      "Most tools don't pair a structured system surface with intuitive, interactive AI workflows — friction gets in the way of real use.",
     description:
-      "A modern AI-powered system interface with structured UI and interactive components.",
+      "A production AI-powered system interface with structured UI and interactive components. Built and deployed on Vercel.",
     proof: {
       status: "Live",
       type: "Full-stack system",
@@ -105,7 +114,7 @@ export const projects = [
     title: "AI Security SOC WAF",
     status: "live",
     problem:
-      "Raw logs and alerts rarely explain behavior — security teams need real-time threat signals and clear context to respond fast.",
+      "Raw logs and alerts rarely explain behaviour — security teams need real-time threat signals and clear context to respond fast.",
     description:
       "A production-grade Web Application Firewall with AI-driven threat detection, real-time request analysis, and a SOC-style dashboard for security monitoring.",
     proof: {
@@ -129,10 +138,9 @@ export const projects = [
 
 export const education = [
   {
-    title: "B.Tech in Computer Science Engineering (AI & Data Science)",
+    title: "B.Tech — Computer Science Engineering (AI & Data Science)",
     period: "2024 – 2028",
     detail: "Hindustan Institute of Technology and Science, Chennai",
-    focus: "Relevant Focus: AI systems, software development, and real-world applications",
   },
 ];
 
@@ -140,13 +148,20 @@ export const experience = [
   {
     title: "Founder & CTO — QueueFree",
     period: "2025 – Present",
-    detail: "Leading all engineering and product decisions for QueueFree — a healthcare SaaS platform. Responsibilities include system architecture, backend API design, frontend development, cloud deployment, and iterating on product based on user feedback.",
+    detail: "Leading all engineering and product at QueueFree — a healthcare SaaS platform built to replace broken hospital queue systems. Responsible for system architecture, backend, frontend, cloud deployment, and product direction.",
   },
   {
-    title: "Independent AI Systems Engineer",
+    title: "Independent Systems Engineer",
     period: "2025 – Present",
-    detail: "Designed and shipped two production AI systems: an AI Security SOC WAF with multi-tenant SaaS architecture (PostgreSQL, Supabase, Flask, Vercel) and an AI OS Interface (React, Tailwind). Both are live and publicly accessible.",
+    detail: "Designed and shipped two production systems: an AI Security SOC WAF (multi-tenant SaaS, PostgreSQL, Supabase, Flask, Vercel) and an AI OS Interface (React, Tailwind). Both live and publicly accessible.",
   },
+];
+
+export const buildingTowards = [
+  "2026 — Pilot launch with clinics in Chennai",
+  "2026 — Admin-facing analytics dashboard v1",
+  "2026 — Offline-first mobile interface for frontline staff",
+  "2026 — Automated appointment routing with predictive wait times",
 ];
 
 export const navLinks = [
@@ -155,23 +170,10 @@ export const navLinks = [
   { href: "#stack", label: "Stack", id: "stack" },
   { href: "#startup", label: "QueueFree", id: "startup" },
   { href: "#projects", label: "Projects", id: "projects" },
-  { href: "#experience", label: "Experience", id: "experience" },
+  { href: "#experience", label: "Timeline", id: "experience" },
   { href: "#contact", label: "Contact", id: "contact" },
 ];
 
-export const learning = [
-  "LLM fine-tuning & prompt engineering",
-  "Distributed systems design",
-  "Next.js App Router & server components",
-  "Docker & containerised deployments",
-];
-
-export const testimonials = [
-  {
-    quote: "Ashiq built and shipped QueueFree entirely on his own — the system design and product thinking are well beyond his year of study.",
-    author: "Add a real name here",
-    role: "Mentor / Professor / User",
-  },
-];
+export const testimonials = [];
 
 export const navSpyIds = navLinks.map((l) => l.id);
