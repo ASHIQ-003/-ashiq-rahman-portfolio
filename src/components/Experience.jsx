@@ -4,7 +4,7 @@ import { education, experience, buildingTowards } from "../content";
 export default function Experience() {
   return (
     <Section id="experience" className="border-t border-border/60 py-16 sm:py-24">
-      <div className="grid gap-16 lg:grid-cols-2">
+      <div className="max-w-3xl">
         {/* Timeline Column */}
         <div>
           <h2 className="section-label">Timeline</h2>
@@ -22,22 +22,6 @@ export default function Experience() {
               </li>
             ))}
           </ol>
-        </div>
-
-        {/* Roadmap Column */}
-        <div>
-          <h2 className="section-label">Roadmap</h2>
-          <ul className="mt-10 space-y-6">
-            {buildingTowards.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-4 border-b border-border/40 pb-6"
-              >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink/20" aria-hidden />
-                <span className="text-base leading-relaxed text-ink/90">{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 
