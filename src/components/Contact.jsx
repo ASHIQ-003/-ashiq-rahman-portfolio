@@ -5,9 +5,6 @@ import { site } from "../content";
 const linkClass =
   "font-semibold text-brand underline decoration-brand/30 underline-offset-4 transition-colors hover:decoration-brand";
 
-const FORMSPREE_ID = "mgoppbgv";
-const USE_FORMSPREE = FORMSPREE_ID !== "YOUR_FORM_ID";
-
 const INTENT_OPTIONS = [
   "Partnership or collaboration",
   "Feedback on QueueFree",
@@ -24,32 +21,27 @@ export default function Contact() {
     e.preventDefault();
     const form = e.target;
 
-    if (USE_FORMSPREE) {
-      setStatus("sending");
-      try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: new FormData(form),
-        });
-        if (res.ok) {
-          setStatus("sent");
-          form.reset();
-        } else {
-          setStatus("error");
-        }
-      } catch {
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          subject: form.subject.value.trim(),
+          message: form.message.value.trim(),
+        })
+      });
+      
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
         setStatus("error");
       }
-    } else {
-      const name = form.name.value.trim();
-      const subject = form.subject.value.trim();
-      const body = form.message.value.trim();
-      const line = `From: ${name}\n\n${body}`;
-      const mail = `mailto:${site.email}?subject=${encodeURIComponent(subject || "Reaching out")}&body=${encodeURIComponent(line)}`;
-      window.location.href = mail;
-      setStatus("sent");
-      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
     }
   }
 
@@ -149,9 +141,9 @@ export default function Contact() {
             </p>
           )}
 
-          {status === "sent" && !USE_FORMSPREE && (
+          {status === "sent" && (
             <p className="text-xs text-ink-muted" role="status">
-              Opening your email client…
+              Message sent successfully!
             </p>
           )}
         </div>
